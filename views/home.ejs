@@ -8,9 +8,22 @@
         <h1>
             TODO App
         </h1>
-        <form>
+        <div id="display">
+            <ul>
+            <% for(let i of todo_list){ %>
+               <li>
+                   <div id="np">
+                <span id="Description"><%= i.description %></span>
+               <span id="Category"> <%= i.category %></span>
+               <span id="due_date"> <%= i.due_date %></span>
+            </div>
+            </li> 
+             <%}%>
+            </ul>
+        <div id="form">
+            <form action="/create-addlist" method="POST" >
             <label for ="Description" >DESCRIPTION:</label><br>
-            <input type="text" id="Description" name="Description" placeholder="what do you need to do?">
+            <input type="text" id="Description" name="description" placeholder="what do you need to do?">
             <hr>
             <label for="Category">CATEGORY </label><br>
             <label for="Category" >Choose a Category</label><br>
@@ -21,9 +34,14 @@
             <input type="radio" id="Category" name="Category" value="Office">
             <label for="Category">OFFICE</label><hr>
             <label for="due_date">DUE DATE</label><br>
-            <input type="date" id="due_date" name="due-date"
+            <input type="date" id="due_date" name="dueDate"
                  value="yyyy-mm-dd"
-                 min="2020-03-04" max="2023-12-31">
+                 min="2020-03-04" max="2023-12-31"><hr>
+                 <button type="submit">ADD TASK </button>
+                 
+            
           </form>
+          </div>
+        
     </body>
 </html>
