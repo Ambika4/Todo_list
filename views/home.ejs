@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            <%= title%>
+        </title>
+    </head>
+    <body>
+        <h1>
+            TODO App
+        </h1>
+        <form>
+            <label for ="Description" >DESCRIPTION:</label><br>
+            <input type="text" id="Description" name="Description" placeholder="what do you need to do?">
+            <hr>
+            <label for="Category">CATEGORY </label><br>
+            <label for="Category" >Choose a Category</label><br>
+            <input type="radio" id="Category" name="Category" value="School">
+            <label for="Category">SCHOOL</label><br>
+            <input type="radio" id="Category" name="Category" value="College">
+            <label for="Category">COLLEGE</label><br>
+            <input type="radio" id="Category" name="Category" value="Office">
+            <label for="Category">OFFICE</label><hr>
+            <label for="due_date">DUE DATE</label><br>
+            <input type="date" id="due_date" name="due-date"
+                 value="yyyy-mm-dd"
+                 min="2020-03-04" max="2023-12-31">
+          </form>
+    </body>
+</html>
