@@ -12,6 +12,7 @@ const homeController=require('../controllers/home_controller');
 console.log('router loaded');
 router.get('/',homeController.home);
 router.post('/create-addlist',homeController.addTask);
+router.get('/delete-work/',homeController.deleteTask);
 //for any further routes access from here
 //router.use('/routername',require('./routerfile));
 module.exports=router;

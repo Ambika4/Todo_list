@@ -1,47 +1,84 @@
 <html>
     <head>
         <title>
-            <%= title%>
+            <%= title%>    
         </title>
+        <link rel="stylesheet" type="text/css"  href="/css/home.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     </head>
     <body>
-        <h1>
-            TODO App
-        </h1>
-        <div id="display">
-            <ul>
-            <% for(let i of todo_list){ %>
-               <li>
-                   <div id="np">
-                <span id="Description"><%= i.description %></span>
-               <span id="Category"> <%= i.category %></span>
-               <span id="due_date"> <%= i.due_date %></span>
+        <div class="layout">
+            <div id="header">
+           <h1>  <i class="fas fa-list"></i>  TODO App</h1> 
             </div>
-            </li> 
-             <%}%>
-            </ul>
-        <div id="form">
-            <form action="/create-addlist" method="POST" >
+            <hr>         
+        <div class="form_layout">
+           <div id ="desc">
+            <form action="/create-addlist" method="POST" id="todo_form" >
             <label for ="Description" >DESCRIPTION:</label><br>
-            <input type="text" id="Description" name="description" placeholder="what do you need to do?">
+            <input type="text" id="Description" name="description" required placeholder="what do you need to do?">
             <hr>
-            <label for="Category">CATEGORY </label><br>
-            <label for="Category" >Choose a Category</label><br>
-            <input type="radio" id="Category" name="Category" value="School">
-            <label for="Category">SCHOOL</label><br>
-            <input type="radio" id="Category" name="Category" value="College">
-            <label for="Category">COLLEGE</label><br>
-            <input type="radio" id="Category" name="Category" value="Office">
-            <label for="Category">OFFICE</label><hr>
+           </div>
+           <div class="cate_due_date">
+           <label for="Category">CATEGORY </label><br>
+               <div id="cate">
+                <div id="category_label">
+                <label for="Category" >Choose a category</label><br>
+                </div>
+                <div id=category_option>
+                <select id="Category" required name="category">
+                    <option value="empty"></option>
+                   <option value="SCHOOL">SCHOOL</option>
+                   <option value="COLLEGE">COLLEGE</option>
+                   <option value="HOME">HOME</option>
+                   <option value="OFFICE">OFFICE</option>
+                </select>
+                </div>
+                </div>
+               <hr>
+               <div id="_due_date">
             <label for="due_date">DUE DATE</label><br>
-            <input type="date" id="due_date" name="dueDate"
+            <input type="date" id="due_date" name="dueDate" required
                  value="yyyy-mm-dd"
-                 min="2020-03-04" max="2023-12-31"><hr>
-                 <button type="submit">ADD TASK </button>
-                 
-            
-          </form>
+                 min="March 4,2018" max="March 31,2033">
+               </div>
+               </div>
+               <hr>
+              <div >
+            <button type="submit" class="add_button"><i class="fas fa-plus"></i> &nbsp&nbspADD TASK </button>
+              </div>
+              <hr>
+              </form>
+              </div>
+
+           <div id="display">          
+            <% for(let i of todo_list){ %>
+                <div id="sub-display">
+                <div id="tick_out">
+                <input type="checkbox" id="list" name="list" value="list">
+                </div>
+                <div id="details">
+                    <div id="desc-cate-date-delete">
+                       <div id="desc-date">
+                       <div ><%= i.description %></div>
+                       <div ><i class="far fa-calendar-alt"></i> <%= i.dueDate %></div>
+                       </div>
+                       <div id="cate-delete">
+                            <div id="categ"><%= i.category %></div>
+                          
+                            <div class="delete-button">
+                                <i class="fas fa-trash-alt"></i>
+                            <a href="/delete-work/?id=<%= i._id %>">DELETE TASK</a>
+                            </div>
+                       </div>
+                   </div>
+                </div>              
+                </div>
+                <hr>
+                <br>
+            <% } %>  
           </div>
-        
+        </div>
     </body>
 </html>

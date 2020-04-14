@@ -1,0 +1,102 @@
+/*responsive*/
+body{
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+/*input*/
+/*header*/
+.layout h1{
+    text-align: center;
+    font-size: 4vw;
+}
+/*Border is not required for input*/
+input{
+    border: none;
+}
+select{
+    border: none;
+    outline: none;
+    border-color: transparent;
+
+   
+}
+/*category for input*/
+#cate{
+display: flex;
+justify-content: space-between;
+
+}
+#category_label{
+    margin-right: 5rem;
+}
+.cate_due_date{
+    display: flex;
+}
+/*button for adding*/
+.add_button {
+    background-color:grey;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+/*display css*/
+#display{
+    display: flex;
+    flex-direction: column;
+}
+#sub-display{
+    display:flex;
+    flex-direction: column;
+}
+#desc-cate-date-delete{
+   
+    display :flex;
+    
+    justify-content: space-around;
+}
+#details{
+    margin:0vw 1vw 1vw 1vw;
+    }
+#cate-delete{
+    display: flex;
+   
+}
+/*delete button*/
+.delete-button{
+    margin-left: 5vw;
+    background-color:red;
+}
+.delete-button i{
+    color: grey;
+    margin-left: 1vw;
+}
+/*link of delete buttons*/
+a{
+ color:grey;   
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+border: none;
+display: inline-block;   
+margin: 4px 2px; 
+padding: 15px 15px;
+text-align: center;
+}
+/*category*/
+#categ{
+    color:white;   
+    background-color:blue;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;   
+    margin: 4px 2px; 
+    padding: 15px 15px;
+    text-align: center;
+}
